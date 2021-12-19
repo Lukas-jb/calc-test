@@ -37,5 +37,31 @@ public class BasicCalculatorTest {
         assertEquals(expectedResult, basicCalculator.sum(first, second),
                 () -> first + " + " + second + " should equal " + expectedResult);
     }
+    @Test
+    @DisplayName("Testing sum: 1+1=2")
+    public void subtract() {
+        // Arrange
+        Long number1 = 2L;
+        Long number2 = 1L;
+        Long expectedValue = 1L;
 
+        // Act
+        Long result = basicCalculator.subtract(number1, number2);
+
+        // Assert
+        assertEquals(expectedValue, result);
+    }
+
+    @DisplayName("Testing several sums")
+    @ParameterizedTest(name = "{0} - {1} = {2}")
+    @CsvSource({
+            "10,    1,   9",
+            "4,    2,   2",
+            "59,  51, 8",
+            "201,  100, 101"
+    })
+    public void severalSubtraction(Long first, Long second, Long expectedResult) {
+        assertEquals(expectedResult, basicCalculator.subtract(first, second),
+                () -> first + " - " + second + " should equal " + expectedResult);
+    }
 }
