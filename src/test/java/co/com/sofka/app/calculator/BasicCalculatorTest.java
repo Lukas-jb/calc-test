@@ -37,6 +37,7 @@ public class BasicCalculatorTest {
         assertEquals(expectedResult, basicCalculator.sum(first, second),
                 () -> first + " + " + second + " should equal " + expectedResult);
     }
+
     @Test
     @DisplayName("Testing subtraction: 2-1=1")
     public void subtract() {
@@ -64,6 +65,7 @@ public class BasicCalculatorTest {
         assertEquals(expectedResult, basicCalculator.subtract(first, second),
                 () -> first + " - " + second + " should equal " + expectedResult);
     }
+
     @Test
     @DisplayName("Testing multiply: 8*2=16")
     public void multiply() {
@@ -119,5 +121,5 @@ public class BasicCalculatorTest {
         assertEquals(expectedResult, basicCalculator.divide(first, second),
                 () -> first + " * " + second + " should equal " + expectedResult);
     }
-    }
 }
+
